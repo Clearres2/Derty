@@ -7,6 +7,9 @@ from aiogram.types import Message, CallbackQuery
 from aiogram.utils.keyboard import InlineKeyboardBuilder
 import aiohttp
 import asyncio
+from dotenv import load_dotenv
+import os
+load_dotenv()  
 
 class Form(StatesGroup):
     Question = State()
@@ -29,7 +32,7 @@ def main_card_keyboard_vericitify():
     kb_builder.adjust(1)
     return kb_builder.as_markup()
 
-TOKEN = 
+TOKEN = os.getenv('TOKEN') 
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
